@@ -1,9 +1,11 @@
 import express from 'express';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
+import dotenv from 'dotenv';
 
 const app = express();
-const port = 5000;
+dotenv.config();
+const port = process.env.PORT ? process.env.PORT : 5000;
 
 app.use(morgan('combined'));
 app.use(bodyParser.json());
@@ -13,8 +15,9 @@ if(!process.env.NODE_ENV){ process.env.NODE_ENV = 'development'; }
 console.log(`Starting environment: ${process.env.NODE_ENV}`);
 
 // models
-const models = require('./models');
-models.sequelize.sync().then(() => {
+// const db = require('./models');
+import db from './models';
+db.sequelize.sync().then(() => {
     console.log('Database is properly configured!');
 }).catch((err) => {
     console.log(err, 'The database was not properly configured!');
