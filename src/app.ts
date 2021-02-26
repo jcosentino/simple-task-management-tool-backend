@@ -3,8 +3,9 @@ import morgan from 'morgan';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 
-const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require(__dirname + '/swagger/swagger.js');
+import swaggerUi from 'swagger-ui-express';
+// tslint:disable-next-line: no-var-requires
+const swaggerDocument = require(__dirname + '/swagger/swagger.ts');
 const router = express.Router();
 const app = express();
 dotenv.config();
@@ -27,6 +28,7 @@ db.sequelize.sync().then(() => {
     console.log(err, 'The database was not properly configured!');
 })
 
+// tslint:disable-next-line: no-var-requires
 require('./routes')(app);
 
 app.get('/', (req, res) => {

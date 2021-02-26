@@ -1,10 +1,12 @@
 'use strict';
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+// tslint:disable-next-line: no-var-requires
 const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
+// tslint:disable-next-line: no-var-requires
 const config = require(__dirname + '/../config/config.js')[env];
 const db: any = {};
 

@@ -4,18 +4,18 @@ const Task = db.Task;
 module.exports = {
     listAllTasks(req: any, res: any){
         return Task.findAll()
-                   .then(tasks => res.status(200).send(tasks))
-                   .catch(error => res.status(400).send(error));
+                   .then((tasks: any) => res.status(200).send(tasks))
+                   .catch((error: any) => res.status(400).send(error));
     },
     getSingleTask(req: any, res: any){
         return Task.findByPk(req.params.id)
-                   .then(task => {
+                   .then((task: any) => {
                        if(!task){
                            return res.status(404).send('Task was not found!');
                         }
                         return res.status(200).send(task);
                    })
-                   .catch(error => res.status(400).send(error));
+                   .catch((error: any) => res.status(400).send(error));
     },
     create(req: any, res: any){
         return Task.create({
@@ -31,7 +31,7 @@ module.exports = {
     },
     update(req: any, res: any){
         return Task.findByPk(req.params.id)
-                   .then(task => {
+                   .then((task: { update: (arg0: { name: any; description: any; dueDateMonth: any; dueDateDay: any; dueDateYear: any; status: any; }) => Promise<any>; name: any; description: any; dueDateMonth: any; dueDateDay: any; dueDateYear: any; status: any; }) => {
                        if(!task){
                            return res.status(404).send('Task not found!');
                         }
@@ -49,13 +49,13 @@ module.exports = {
     },
     delete(req: any, res: any){
         return Task.findByPk(req.params.id)
-                   .then(task => {
+                   .then((task: { destroy: () => Promise<any>; }) => {
                        if(!task){
                            return res.status(400).send('Unable to delete, task does not exist!');
                        }
                        return task.destroy()
                                   .then(() => res.status(204).send())
-                                  .catch(error => res.status(400).send(error));
+                                  .catch((error: any) => res.status(400).send(error));
                    });
     }
 };
