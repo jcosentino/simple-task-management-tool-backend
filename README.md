@@ -43,6 +43,11 @@ sequelize db:migrate
 ```
 
 ## Usage
+Run this command to download the node modules:
+```bash
+npm install
+```
+
 Starting the application is easy! Run the following command:
 ```bash
 npm start
