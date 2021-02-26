@@ -96,4 +96,6 @@ DB_DIALECT_PROD='mysql'
 ```
 
 # Swagger
-You can reach the Swagger UI here, where {PORT} is your port number from ```env```: ```http://localhost:{PORT}/api-docs/```
+You can reach the Swagger UI here, where {PORT} is your port number from ```.env```:
+
+```http://localhost:{PORT}/api-docs/```
