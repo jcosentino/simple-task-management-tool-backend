@@ -159,8 +159,14 @@ module.exports = {
           "description": {
             "type": "string"
           },
-          "dueDate": {
-            "type": "string"
+          "dueDateMonth": {
+            "type": "integer"
+          },
+          "dueDateDay": {
+            "type": "integer"
+          },
+          "dueDateYear": {
+            "type": "integer"
           },
           "status": {
             "type": "string"

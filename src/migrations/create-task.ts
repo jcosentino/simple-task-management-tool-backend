@@ -24,9 +24,17 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       },
-      dueDate: {
+      dueDateMonth: {
         allowNull: true,
-        type: Sequelize.DATE
+        type: Sequelize.INTEGER
+      },
+      dueDateDay: {
+        allowNull: true,
+        type: Sequelize.INTEGER
+      },
+      dueDateYear: {
+        allowNull: true,
+        type: Sequelize.INTEGER
       },
       status: {
         allowNull: false,
