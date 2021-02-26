@@ -12,9 +12,39 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
     }
-  };
+  }
   Task.init({
-    name: DataTypes.STRING
+    id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
+    name: {
+      allowNull: false,
+      type: DataTypes.STRING
+    },
+    description: {
+      allowNull: true,
+      type: DataTypes.STRING
+    },
+    createdAt: {
+      allowNull: false,
+      type: DataTypes.DATE
+    },
+    updatedAt: {
+      allowNull: false,
+      type: DataTypes.DATE
+    },
+    dueDate: {
+      allowNull: true,
+      type: DataTypes.DATE
+    },
+    status: {
+      allowNull: false,
+      defaultValue: 'backlog',
+      type: DataTypes.STRING
+    }
   }, {
     sequelize,
     modelName: 'Task',

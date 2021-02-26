@@ -1,10 +1,9 @@
-const taskController = require('../controllers').task;
+import task from '../controllers';
 
 module.exports = (app) => {
-    app.get('/tasks', (req, res) => {
-        res.status(200).send({
-            message: 'There should be tasks listed!'
-        });
-    });
-    app.post('/task', taskController.create);
+    app.get('/tasks', task.listAllTasks);
+    app.get('/task/:id', task.getSingleTask);
+    app.post('/task', task.create);
+    app.put('/task/:id', task.update);
+    app.delete('/task/:id', task.delete);
 };

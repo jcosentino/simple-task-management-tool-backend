@@ -15,7 +15,6 @@ if(!process.env.NODE_ENV){ process.env.NODE_ENV = 'development'; }
 console.log(`Starting environment: ${process.env.NODE_ENV}`);
 
 // models
-// const db = require('./models');
 import db from './models';
 db.sequelize.sync().then(() => {
     console.log('Database is properly configured!');
