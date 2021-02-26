@@ -1,4 +1,6 @@
 'use strict';
+
+// Used to create the databases if not present, then creates the tables
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('Tasks', {

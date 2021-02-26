@@ -1,6 +1,7 @@
 // tslint:disable-next-line: no-var-requires
 require('dotenv').config();
 
+// This feeds Swagger UI our RESTful routes
 module.exports = {
     "swagger": "2.0",
     "info": {

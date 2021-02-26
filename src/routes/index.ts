@@ -1,5 +1,6 @@
 import task from '../controllers';
 
+// Task CRUD operations
 module.exports = (app) => {
     app.get('/tasks', task.listAllTasks);
     app.get('/task/:id', task.getSingleTask);

@@ -1,6 +1,7 @@
 // tslint:disable-next-line: no-var-requires
 require('dotenv').config();
 
+// Pulls in database information from .env file
 module.exports = {
   "development": {
     "username": process.env.DB_USER_DEV,
